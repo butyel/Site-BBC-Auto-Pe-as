@@ -221,13 +221,13 @@ export default function AdminPopups() {
                   <div className="flex items-center gap-1 ml-2">
                     <button
                       onClick={() => handleEdit(popup)}
-                      className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-red-50"
+                      className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-accent"
                     >
                       <Edit className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(popup.id)}
-                      className="p-1.5 rounded-lg text-gray-500 hover:text-red-600 hover:bg-red-50"
+                      className="p-1.5 rounded-lg text-gray-500 hover:text-bbc hover:bg-accent"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>

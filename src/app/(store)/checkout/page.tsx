@@ -153,13 +153,13 @@ export default function CheckoutPage() {
           </p>
           <div className="mt-6">
             <Link href="/minhaconta/pedidos">
-              <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 h-12 rounded-xl">
+              <Button className="bg-bbc hover:bg-bbc-dark text-white font-semibold px-8 h-12 rounded-xl">
                 ACOMPANHAR PEDIDO
               </Button>
             </Link>
           </div>
           <div className="mt-3">
-            <Link href="/" className="text-sm text-red-600 hover:text-red-700 font-medium">
+            <Link href="/" className="text-sm text-bbc hover:text-bbc-dark font-medium">
               VOLTAR PARA HOME
             </Link>
           </div>
@@ -175,7 +175,7 @@ export default function CheckoutPage() {
           <h1 className="text-2xl font-bold text-gray-900">Carrinho vazio</h1>
           <p className="text-gray-500 mt-2">Adicione produtos ao carrinho antes de finalizar.</p>
           <Link href="/loja">
-            <Button className="mt-6 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 h-12 rounded-xl">
+            <Button className="mt-6 bg-bbc hover:bg-bbc-dark text-white font-semibold px-8 h-12 rounded-xl">
               VER PRODUTOS
             </Button>
           </Link>
@@ -189,9 +189,9 @@ export default function CheckoutPage() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-bbc transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/carrinho" className="hover:text-red-600 transition-colors">Carrinho</Link>
+            <Link href="/carrinho" className="hover:text-bbc transition-colors">Carrinho</Link>
             <span>/</span>
             <span className="text-gray-900 font-medium">Checkout</span>
           </div>
@@ -210,7 +210,7 @@ export default function CheckoutPage() {
                       currentStep > step.id
                         ? "bg-green-500 text-white"
                         : currentStep === step.id
-                        ? "bg-red-600 text-white shadow-lg shadow-red-200"
+                        ? "bg-bbc text-white shadow-lg shadow-blue-200"
                         : "bg-gray-100 text-gray-400"
                     }`}
                   >
@@ -305,7 +305,7 @@ export default function CheckoutPage() {
                   <div className="flex justify-end mt-6">
                     <Button
                       onClick={handleContinue}
-                      className="bg-red-600 hover:bg-red-700 text-white font-semibold h-11 px-8 rounded-xl"
+                      className="bg-bbc hover:bg-bbc-dark text-white font-semibold h-11 px-8 rounded-xl"
                     >
                       CONTINUAR
                       <ChevronRight className="h-4 w-4 ml-1.5" />
@@ -416,7 +416,7 @@ export default function CheckoutPage() {
                     </Button>
                     <Button
                       onClick={handleContinue}
-                      className="bg-red-600 hover:bg-red-700 text-white font-semibold h-11 px-8 rounded-xl"
+                      className="bg-bbc hover:bg-bbc-dark text-white font-semibold h-11 px-8 rounded-xl"
                     >
                       CONTINUAR
                       <ChevronRight className="h-4 w-4 ml-1.5" />
@@ -451,13 +451,13 @@ export default function CheckoutPage() {
                         onClick={() => setPaymentMethod(method.id)}
                         className={`p-4 rounded-xl border-2 text-left transition-all ${
                           paymentMethod === method.id
-                            ? "border-red-500 bg-red-50"
+                            ? "border-bbc bg-accent"
                             : "border-gray-100 hover:border-gray-200"
                         }`}
                       >
                         <method.icon
                           className={`h-6 w-6 mb-2 ${
-                            paymentMethod === method.id ? "text-red-600" : "text-gray-400"
+                            paymentMethod === method.id ? "text-bbc" : "text-gray-400"
                           }`}
                         />
                         <p className="text-sm font-semibold text-gray-900">{method.label}</p>
@@ -536,7 +536,7 @@ export default function CheckoutPage() {
                           id="installments"
                           value={cardInstallments}
                           onChange={(e) => setCardInstallments(e.target.value)}
-                          className="w-full mt-1 h-10 px-3 rounded-lg border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full mt-1 h-10 px-3 rounded-lg border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-bbc"
                         >
                           {Array.from({ length: 12 }, (_, i) => i + 1).map((n) => (
                             <option key={n} value={n}>
@@ -574,7 +574,7 @@ export default function CheckoutPage() {
                     <Button
                       onClick={handleSubmit}
                       disabled={submitting}
-                      className="bg-red-600 hover:bg-red-700 text-white font-bold h-11 px-8 rounded-xl"
+                      className="bg-bbc hover:bg-bbc-dark text-white font-bold h-11 px-8 rounded-xl"
                     >
                       {submitting ? (
                         <>
@@ -640,7 +640,7 @@ export default function CheckoutPage() {
                 <Separator />
                 <div className="flex justify-between text-base font-bold text-gray-900">
                   <span>Total</span>
-                  <span className="text-red-600">{formatPrice(finalTotal)}</span>
+                  <span className="text-bbc">{formatPrice(finalTotal)}</span>
                 </div>
               </div>
 

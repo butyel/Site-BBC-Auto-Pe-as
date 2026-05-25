@@ -17,8 +17,8 @@ export default function TrocasPage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
-            <RotateCcw className="h-16 w-16 text-red-500 mx-auto mb-6" />
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Trocas e <span className="text-red-500">Devolucoes</span></h1>
+            <RotateCcw className="h-16 w-16 text-bbc-light mx-auto mb-6" />
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Trocas e <span className="text-bbc-light">Devolucoes</span></h1>
             <p className="text-lg text-gray-300">Entenda como funciona nossa politica de trocas e devolucoes.</p>
           </motion.div>
         </div>
@@ -36,10 +36,10 @@ export default function TrocasPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-xl border border-gray-100 p-6 text-center shadow-sm relative"
               >
-                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <step.icon className="h-6 w-6 text-red-600" />
+                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <step.icon className="h-6 w-6 text-bbc" />
                 </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-bbc rounded-full flex items-center justify-center text-white text-xs font-bold">
                   {index + 1}
                 </div>
                 <h3 className="font-semibold text-gray-900 text-sm mb-1">{step.title}</h3>
@@ -54,7 +54,7 @@ export default function TrocasPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-red-600" />
+                    <AlertTriangle className="h-5 w-5 text-bbc" />
                     Direito de Arrependimento
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -98,11 +98,11 @@ export default function TrocasPage() {
                   </h3>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-start gap-2">
-                      <ArrowRight className="h-4 w-4 text-red-500 mt-1 flex-shrink-0" />
+                      <ArrowRight className="h-4 w-4 text-bbc-light mt-1 flex-shrink-0" />
                       <span><strong>Desistencia:</strong> O frete de devolucao e por conta do cliente.</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <ArrowRight className="h-4 w-4 text-red-500 mt-1 flex-shrink-0" />
+                      <ArrowRight className="h-4 w-4 text-bbc-light mt-1 flex-shrink-0" />
                       <span><strong>Defeito:</strong> A BBC AUTO PECAS arca com o frete de coleta e reenvio.</span>
                     </li>
                   </ul>
@@ -110,11 +110,11 @@ export default function TrocasPage() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-red-50 rounded-xl border border-red-100 p-8 text-center">
-              <HelpCircle className="h-10 w-10 text-red-600 mx-auto mb-3" />
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-accent rounded-xl border border-accent p-8 text-center">
+              <HelpCircle className="h-10 w-10 text-bbc mx-auto mb-3" />
               <h2 className="text-xl font-bold text-gray-900 mb-2">Precisa solicitar uma troca?</h2>
               <p className="text-gray-600 mb-4">Entre em contato conosco para iniciar o processo.</p>
-              <Link href="/contato" className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors">
+              <Link href="/contato" className="inline-flex items-center px-6 py-3 bg-bbc text-white font-semibold rounded-xl hover:bg-bbc-dark transition-colors">
                 SOLICITAR TROCA
               </Link>
             </motion.div>

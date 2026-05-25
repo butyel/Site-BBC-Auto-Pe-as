@@ -32,11 +32,11 @@ function StatCard({ title, value, change, changeType, icon }: StatCardProps) {
               {changeType === "up" ? (
                 <TrendingUp className="w-3 h-3 text-green-600" />
               ) : (
-                <TrendingDown className="w-3 h-3 text-red-600" />
+                <TrendingDown className="w-3 h-3 text-bbc" />
               )}
               <span
                 className={
-                  changeType === "up" ? "text-green-600" : "text-red-600"
+                  changeType === "up" ? "text-green-600" : "text-bbc"
                 }
               >
                 {change}

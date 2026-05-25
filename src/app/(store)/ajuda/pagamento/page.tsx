@@ -46,8 +46,8 @@ export default function PagamentoPage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
-            <CreditCard className="h-16 w-16 text-red-500 mx-auto mb-6" />
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Formas de <span className="text-red-500">Pagamento</span></h1>
+            <CreditCard className="h-16 w-16 text-bbc-light mx-auto mb-6" />
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Formas de <span className="text-bbc-light">Pagamento</span></h1>
             <p className="text-lg text-gray-300">Confira todas as formas de pagamento disponiveis na BBC AUTO PECAS.</p>
           </motion.div>
         </div>
@@ -63,10 +63,10 @@ export default function PagamentoPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-lg hover:border-red-100 transition-all"
+                className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-lg hover:border-accent transition-all"
               >
-                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-4">
-                  <method.icon className="h-7 w-7 text-red-600" />
+                <div className="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center mb-4">
+                  <method.icon className="h-7 w-7 text-bbc" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
                 <p className="text-sm text-gray-500 mb-4">{method.desc}</p>
@@ -103,10 +103,10 @@ export default function PagamentoPage() {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-red-50 rounded-xl border border-red-100 p-8 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-accent rounded-xl border border-accent p-8 text-center">
             <h2 className="text-xl font-bold text-gray-900 mb-2">Precisa de ajuda com o pagamento?</h2>
             <p className="text-gray-600 mb-4">Nossa equipe esta pronta para ajudar.</p>
-            <Link href="/contato" className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors">
+            <Link href="/contato" className="inline-flex items-center px-6 py-3 bg-bbc text-white font-semibold rounded-xl hover:bg-bbc-dark transition-colors">
               FALE CONOSCO
             </Link>
           </motion.div>

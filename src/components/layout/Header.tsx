@@ -158,7 +158,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <a
               href={`tel:+55${config.phone.replace(/\D/g, "")}`}
-              className="flex items-center gap-1.5 hover:text-red-400 transition-colors"
+              className="flex items-center gap-1.5 hover:text-bbc-light transition-colors"
             >
               <Phone className="h-3 w-3" />
               <span>{config.phone}</span>
@@ -167,7 +167,7 @@ export default function Header() {
               href={`https://wa.me/${config.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-red-400 transition-colors"
+              className="flex items-center gap-1.5 hover:text-bbc-light transition-colors"
             >
               <span className="text-green-400">WhatsApp</span>
             </a>
@@ -176,7 +176,7 @@ export default function Header() {
             <span className="text-gray-400">Frete grátis acima de R$ 299</span>
             <Link
               href="/minhaconta"
-              className="flex items-center gap-1.5 hover:text-red-400 transition-colors"
+              className="flex items-center gap-1.5 hover:text-bbc-light transition-colors"
             >
               <User className="h-3 w-3" />
               <span>Minha Conta</span>
@@ -204,7 +204,7 @@ export default function Header() {
                 />
               ) : (
                 <span className="text-xl lg:text-2xl font-bold tracking-tight">
-                  <span className="text-red-600">BBC</span>{" "}
+                  <span className="text-bbc">BBC</span>{" "}
                   <span className="text-graphite">AUTO PEÇAS</span>
                 </span>
               )}
@@ -221,7 +221,7 @@ export default function Header() {
               >
                 <Heart className="h-5 w-5 text-gray-700" />
                 {favoritesCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 bg-red-600 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                  <span className="absolute -top-0.5 -right-0.5 bg-bbc text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                     {favoritesCount > 9 ? "9+" : favoritesCount}
                   </span>
                 )}
@@ -240,7 +240,7 @@ export default function Header() {
               >
                 <ShoppingCart className="h-5 w-5 text-gray-700" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 bg-red-600 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                  <span className="absolute -top-0.5 -right-0.5 bg-bbc text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                     {cartCount > 9 ? "9+" : cartCount}
                   </span>
                 )}
@@ -258,7 +258,7 @@ export default function Header() {
             onMouseEnter={handleCategoriesEnter}
             onMouseLeave={handleCategoriesLeave}
           >
-            <button className="flex items-center gap-1.5 h-11 px-3 text-sm font-medium text-gray-700 hover:text-red-600 transition-colors rounded-t-lg hover:bg-gray-50">
+            <button className="flex items-center gap-1.5 h-11 px-3 text-sm font-medium text-gray-700 hover:text-bbc transition-colors rounded-t-lg hover:bg-gray-50">
               <Menu className="h-4 w-4" />
               <span>Categorias</span>
               <ChevronDown
@@ -291,7 +291,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="h-11 flex items-center px-3 text-sm text-gray-600 hover:text-red-600 transition-colors rounded-lg hover:bg-gray-50"
+                className="h-11 flex items-center px-3 text-sm text-gray-600 hover:text-bbc transition-colors rounded-lg hover:bg-gray-50"
               >
                 {link.name}
               </Link>

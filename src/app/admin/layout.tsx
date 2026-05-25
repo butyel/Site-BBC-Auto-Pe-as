@@ -156,7 +156,7 @@ export default function AdminLayout({
                       Configurações
                     </button>
                     <hr className="my-1 border-gray-200" />
-                    <button className="flex items-center gap-2 w-full px-4 py-2 text-sm text-red-600 hover:bg-red-50">
+                    <button className="flex items-center gap-2 w-full px-4 py-2 text-sm text-bbc hover:bg-accent">
                       <LogOut className="w-4 h-4" />
                       Sair
                     </button>

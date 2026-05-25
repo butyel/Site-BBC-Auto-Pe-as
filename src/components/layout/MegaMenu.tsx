@@ -150,7 +150,7 @@ export default function MegaMenu({
                   className={cn(
                     "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
                     activeCategory === cat.slug
-                      ? "bg-red-50 text-red-600 font-medium"
+                      ? "bg-accent text-bbc font-medium"
                       : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
                   )}
                 >
@@ -172,7 +172,7 @@ export default function MegaMenu({
                       key={sub.slug}
                       href={`/loja?categoria=${sub.slug}`}
                       onClick={onClose}
-                      className="text-sm text-gray-600 hover:text-red-600 transition-colors py-1"
+                      className="text-sm text-gray-600 hover:text-bbc transition-colors py-1"
                     >
                       {sub.name}
                     </Link>
@@ -197,7 +197,7 @@ export default function MegaMenu({
                   <Link
                     href={`/loja?categoria=${cat.slug}`}
                     onClick={onClose}
-                    className="text-sm text-red-600 hover:text-red-700 transition-colors"
+                    className="text-sm text-bbc hover:text-bbc-dark transition-colors"
                   >
                     Ver {cat.name} →
                   </Link>

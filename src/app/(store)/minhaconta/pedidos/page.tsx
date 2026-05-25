@@ -42,7 +42,7 @@ const statusConfig: Record<string, { label: string; color: string }> = {
   PREPARING: { label: "Preparando", color: "bg-purple-100 text-purple-700" },
   SHIPPED: { label: "Enviado", color: "bg-cyan-100 text-cyan-700" },
   DELIVERED: { label: "Entregue", color: "bg-green-100 text-green-700" },
-  CANCELLED: { label: "Cancelado", color: "bg-red-100 text-red-700" },
+  CANCELLED: { label: "Cancelado", color: "bg-red-100 text-bbc-dark" },
 };
 
 const paymentLabels: Record<string, string> = {
@@ -78,13 +78,13 @@ export default function PedidosPage() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-red-600 transition-colors">
+            <Link href="/" className="hover:text-bbc transition-colors">
               Home
             </Link>
             <span>/</span>
             <Link
               href="/minhaconta"
-              className="hover:text-red-600 transition-colors"
+              className="hover:text-bbc transition-colors"
             >
               Minha Conta
             </Link>
@@ -120,7 +120,7 @@ export default function PedidosPage() {
                   onClick={() => setStatusFilter(f.value)}
                   className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                     statusFilter === f.value
-                      ? "bg-red-600 text-white"
+                      ? "bg-bbc text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -197,7 +197,7 @@ export default function PedidosPage() {
                 : "Você ainda não tem pedidos com este status"}
             </p>
             <Link href="/loja">
-              <Button className="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm h-10 px-6 rounded-lg">
+              <Button className="mt-4 bg-bbc hover:bg-bbc-dark text-white font-semibold text-sm h-10 px-6 rounded-lg">
                 <ShoppingBag className="h-4 w-4 mr-2" />
                 COMPRAR AGORA
               </Button>
@@ -208,7 +208,7 @@ export default function PedidosPage() {
         <div className="mt-6">
           <Link
             href="/minhaconta"
-            className="inline-flex items-center gap-1.5 text-sm text-red-600 hover:text-red-700 font-medium"
+            className="inline-flex items-center gap-1.5 text-sm text-bbc hover:text-bbc-dark font-medium"
           >
             <ArrowLeft className="h-4 w-4" />
             Voltar para Minha Conta

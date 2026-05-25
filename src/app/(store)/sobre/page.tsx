@@ -25,7 +25,7 @@ export default function SobrePage() {
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Sobre a <span className="text-red-500">BBC AUTO PEÇAS</span>
+              Sobre a <span className="text-bbc-light">BBC AUTO PEÇAS</span>
             </h1>
             <p className="text-lg text-gray-300 leading-relaxed">
               Há mais de 15 anos oferecendo as melhores peças automotivas para motoristas, mecânicas e oficinas de todo o Brasil. Nossa missão é manter seu veículo rodando com segurança e qualidade.
@@ -38,7 +38,7 @@ export default function SobrePage() {
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Nossa <span className="text-red-600">História</span></h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Nossa <span className="text-bbc">História</span></h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Fundada em 2010, a BBC AUTO PEÇAS começou como uma pequena loja de bairro especializada em peças de motor. Com o passar dos anos, fomos crescendo e expandindo nosso catálogo para atender todas as necessidades dos nossos clientes.
               </p>
@@ -50,13 +50,13 @@ export default function SobrePage() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-red-600 to-red-800">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-bbc to-bbc-secondary">
                 <div className="w-full h-full flex items-center justify-center">
                   <Users className="h-24 w-24 text-white/30" />
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 hidden lg:block">
-                <div className="text-3xl font-bold text-red-600">15+</div>
+                <div className="text-3xl font-bold text-bbc">15+</div>
                 <div className="text-sm text-gray-500">Anos de experiência</div>
               </div>
             </div>
@@ -70,10 +70,10 @@ export default function SobrePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-gray-100 p-6 hover:shadow-lg hover:border-red-100 transition-all group"
+                className="bg-white rounded-xl border border-gray-100 p-6 hover:shadow-lg hover:border-accent transition-all group"
               >
-                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-600 transition-colors">
-                  <value.icon className="h-6 w-6 text-red-600 group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-4 group-hover:bg-bbc transition-colors">
+                  <value.icon className="h-6 w-6 text-bbc group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{value.description}</p>
@@ -83,7 +83,7 @@ export default function SobrePage() {
 
           <div className="relative">
             <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2 hidden md:block" />
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">Nossa <span className="text-red-600">Trajetória</span></h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">Nossa <span className="text-bbc">Trajetória</span></h2>
             <div className="space-y-8 lg:space-y-12">
               {timeline.map((item, index) => (
                 <motion.div
@@ -95,12 +95,12 @@ export default function SobrePage() {
                 >
                   <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
                     <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
-                      <span className="text-sm font-bold text-red-600">{item.year}</span>
+                      <span className="text-sm font-bold text-bbc">{item.year}</span>
                       <h3 className="text-lg font-semibold text-gray-900 mt-1">{item.title}</h3>
                       <p className="text-sm text-gray-500 mt-2">{item.description}</p>
                     </div>
                   </div>
-                  <div className="hidden md:flex w-8 h-8 bg-red-600 rounded-full items-center justify-center flex-shrink-0 relative z-10">
+                  <div className="hidden md:flex w-8 h-8 bg-bbc rounded-full items-center justify-center flex-shrink-0 relative z-10">
                     <div className="w-3 h-3 bg-white rounded-full" />
                   </div>
                   <div className="flex-1 hidden md:block" />
@@ -114,7 +114,7 @@ export default function SobrePage() {
       <section className="bg-gray-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Target className="h-12 w-12 text-red-600 mx-auto mb-4" />
+            <Target className="h-12 w-12 text-bbc mx-auto mb-4" />
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Missão, Visão & Valores</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
               <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
@@ -137,14 +137,14 @@ export default function SobrePage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Vamos <span className="text-red-600">Trabalhar Juntos?</span></h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Vamos <span className="text-bbc">Trabalhar Juntos?</span></h2>
             <p className="text-gray-500 max-w-2xl mx-auto mb-8">
               Entre em contato conosco para saber mais sobre nossos produtos, serviços e condições especiais para mecânicas e oficinas.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contato"
-                className="px-8 py-3 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors"
+                className="px-8 py-3 bg-bbc text-white font-semibold rounded-xl hover:bg-bbc-dark transition-colors"
               >
                 FALE CONOSCO
               </Link>

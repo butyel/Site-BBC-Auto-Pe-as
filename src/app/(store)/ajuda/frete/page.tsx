@@ -10,8 +10,8 @@ export default function FretePage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
-            <Truck className="h-16 w-16 text-red-500 mx-auto mb-6" />
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Frete e Prazo de <span className="text-red-500">Entrega</span></h1>
+            <Truck className="h-16 w-16 text-bbc-light mx-auto mb-6" />
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Frete e Prazo de <span className="text-bbc-light">Entrega</span></h1>
             <p className="text-lg text-gray-300">Confira as informacoes sobre prazos e custos de entrega para todo o Brasil.</p>
           </motion.div>
         </div>
@@ -33,8 +33,8 @@ export default function FretePage() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white rounded-xl border border-gray-100 p-6 text-center shadow-sm"
               >
-                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="h-6 w-6 text-red-600" />
+                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="h-6 w-6 text-bbc" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-500">{item.desc}</p>
@@ -84,18 +84,18 @@ export default function FretePage() {
                   "A BBC AUTO PECAS nao se responsabiliza por atrasos decorrentes de eventos externos, como greves ou condicoes climaticas adversas.",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600">
-                    <Truck className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <Truck className="h-5 w-5 text-bbc flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-red-50 rounded-xl border border-red-100 p-8 text-center">
-              <HelpCircle className="h-10 w-10 text-red-600 mx-auto mb-3" />
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-accent rounded-xl border border-accent p-8 text-center">
+              <HelpCircle className="h-10 w-10 text-bbc mx-auto mb-3" />
               <h2 className="text-xl font-bold text-gray-900 mb-2">Ainda tem duvidas?</h2>
               <p className="text-gray-600 mb-4">Entre em contato com nossa equipe de atendimento.</p>
-              <Link href="/contato" className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors">
+              <Link href="/contato" className="inline-flex items-center px-6 py-3 bg-bbc text-white font-semibold rounded-xl hover:bg-bbc-dark transition-colors">
                 FALE CONOSCO
               </Link>
             </motion.div>

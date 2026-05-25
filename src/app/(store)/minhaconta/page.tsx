@@ -49,7 +49,7 @@ const statusConfig = {
   PREPARING: { label: "Preparando", color: "bg-purple-100 text-purple-700" },
   SHIPPED: { label: "Enviado", color: "bg-cyan-100 text-cyan-700" },
   DELIVERED: { label: "Entregue", color: "bg-green-100 text-green-700" },
-  CANCELLED: { label: "Cancelado", color: "bg-red-100 text-red-700" },
+  CANCELLED: { label: "Cancelado", color: "bg-red-100 text-bbc-dark" },
 };
 
 export default function MinhaContaPage() {
@@ -89,7 +89,7 @@ export default function MinhaContaPage() {
           <div className="flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2 text-sm text-gray-500">
-                <Link href="/" className="hover:text-red-600 transition-colors">
+                <Link href="/" className="hover:text-bbc transition-colors">
                   Home
                 </Link>
                 <span>/</span>
@@ -125,12 +125,12 @@ export default function MinhaContaPage() {
             >
               <Link
                 href={link.href}
-                className="block bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md hover:border-red-100 transition-all group"
+                className="block bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md hover:border-accent transition-all group"
               >
-                <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mb-3 group-hover:bg-red-100 transition-colors">
-                  <link.icon className="h-5 w-5 text-red-600" />
+                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center mb-3 group-hover:bg-accent transition-colors">
+                  <link.icon className="h-5 w-5 text-bbc" />
                 </div>
-                <h3 className="text-sm font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
+                <h3 className="text-sm font-semibold text-gray-900 group-hover:text-bbc transition-colors">
                   {link.label}
                 </h3>
                 <p className="text-xs text-gray-500 mt-0.5">{link.desc}</p>
@@ -153,7 +153,7 @@ export default function MinhaContaPage() {
             </div>
             <Link
               href="/minhaconta/pedidos"
-              className="text-sm text-red-600 hover:text-red-700 font-medium flex items-center gap-1"
+              className="text-sm text-bbc hover:text-bbc-dark font-medium flex items-center gap-1"
             >
               Ver todos
               <ChevronRight className="h-4 w-4" />
@@ -205,7 +205,7 @@ export default function MinhaContaPage() {
               <Package className="h-10 w-10 text-gray-300 mx-auto mb-2" />
               <p className="text-sm text-gray-500">Nenhum pedido ainda</p>
               <Link href="/loja">
-                <Button className="mt-3 text-sm bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg h-10 px-6">
+                <Button className="mt-3 text-sm bg-bbc hover:bg-bbc-dark text-white font-semibold rounded-lg h-10 px-6">
                   COMPRAR AGORA
                 </Button>
               </Link>

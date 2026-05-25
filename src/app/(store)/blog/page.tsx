@@ -86,7 +86,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Blog <span className="text-red-500">BBC AUTO PECAS</span>
+              Blog <span className="text-bbc-light">BBC AUTO PECAS</span>
             </h1>
             <p className="text-lg text-gray-300">
               Dicas, novidades e informacoes sobre o mundo automotivo para ajudar voce a cuidar melhor do seu veiculo.
@@ -105,7 +105,7 @@ export default function BlogPage() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeCategory === cat
-                      ? "bg-red-600 text-white"
+                      ? "bg-bbc text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -120,7 +120,7 @@ export default function BlogPage() {
                 placeholder="Buscar artigos..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent"
               />
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function BlogPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-red-100 transition-all group"
+                  className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-accent transition-all group"
                 >
                   <div className="aspect-[16/9] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                     <span className="text-4xl">🔧</span>
@@ -162,7 +162,7 @@ export default function BlogPage() {
                         {post.category}
                       </span>
                     </div>
-                    <h2 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors line-clamp-2">
+                    <h2 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-bbc transition-colors line-clamp-2">
                       {post.title}
                     </h2>
                     <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3">
@@ -175,7 +175,7 @@ export default function BlogPage() {
                       </span>
                       <Link
                         href={`/blog/${post.id}`}
-                        className="inline-flex items-center gap-1 text-sm text-red-600 hover:text-red-700 font-medium"
+                        className="inline-flex items-center gap-1 text-sm text-bbc hover:text-bbc-dark font-medium"
                       >
                         Ler mais
                         <ArrowRight className="h-3.5 w-3.5" />

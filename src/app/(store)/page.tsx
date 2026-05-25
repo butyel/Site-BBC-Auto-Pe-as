@@ -57,7 +57,7 @@ const categories = [
     name: "Motor",
     slug: "motor",
     icon: "⚙️",
-    gradient: "from-red-600 to-red-800",
+    gradient: "from-bbc to-bbc-secondary",
     count: "246 peças",
   },
   {
@@ -71,14 +71,14 @@ const categories = [
     name: "Freios",
     slug: "freios",
     icon: "🛞",
-    gradient: "from-red-700 to-black",
+    gradient: "from-bbc-dark to-black",
     count: "312 peças",
   },
   {
     name: "Elétrica",
     slug: "eletrica",
     icon: "⚡",
-    gradient: "from-graphite to-red-800",
+    gradient: "from-graphite to-bbc-secondary",
     count: "178 peças",
   },
   {
@@ -92,7 +92,7 @@ const categories = [
     name: "Arrefecimento",
     slug: "arrefecimento",
     icon: "🌡️",
-    gradient: "from-red-800 to-graphite",
+    gradient: "from-bbc-secondary to-graphite",
     count: "67 peças",
   },
 ];
@@ -316,7 +316,7 @@ function ProductCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300 flex flex-col"
+      className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-accent transition-all duration-300 flex flex-col"
     >
       <Link href={`/produto/${product.slug}`} className="relative">
         <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
@@ -325,12 +325,12 @@ function ProductCard({
           </div>
         </div>
         {discount > 0 && (
-          <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md">
+          <div className="absolute top-2 left-2 bg-bbc text-white text-xs font-bold px-2 py-1 rounded-md">
             -{discount}%
           </div>
         )}
-        <button className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-50">
-          <Heart className="h-4 w-4 text-gray-600 hover:text-red-600" />
+        <button className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-accent">
+          <Heart className="h-4 w-4 text-gray-600 hover:text-bbc" />
         </button>
       </Link>
       <div className="p-3 flex flex-col flex-1">
@@ -338,7 +338,7 @@ function ProductCard({
           {product.brand}
         </span>
         <Link href={`/produto/${product.slug}`}>
-          <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-red-600 transition-colors leading-snug">
+          <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-bbc transition-colors leading-snug">
             {product.name}
           </h3>
         </Link>
@@ -348,7 +348,7 @@ function ProductCard({
               {formatPrice(product.comparePrice)}
             </span>
           )}
-          <div className="text-lg font-bold text-red-600">
+          <div className="text-lg font-bold text-bbc">
             {formatPrice(product.price)}
           </div>
           <span className="text-xs text-gray-500">
@@ -474,7 +474,7 @@ export default function HomePage() {
             )}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-red-900/70" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-bbc-menu/70" />
             <div className="relative h-full max-w-7xl mx-auto px-4 flex items-center">
               <motion.div
                 key={index}
@@ -495,7 +495,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-3 mt-8">
                   <Link href={slide.link || "/loja"}>
-                    <Button className="bg-white text-red-600 hover:bg-gray-100 font-bold text-sm px-6 h-11 rounded-lg">
+                    <Button className="bg-white text-bbc hover:bg-gray-100 font-bold text-sm px-6 h-11 rounded-lg">
                       COMPRAR AGORA
                     </Button>
                   </Link>
@@ -556,7 +556,7 @@ export default function HomePage() {
                 key={item.label}
                 className="flex items-center gap-3 text-white"
               >
-                <item.icon className="h-6 w-6 text-red-500 flex-shrink-0" />
+                <item.icon className="h-6 w-6 text-bbc-light flex-shrink-0" />
                 <div>
                   <p className="text-sm font-semibold">{item.label}</p>
                   <p className="text-xs text-gray-400">{item.desc}</p>
@@ -587,7 +587,7 @@ export default function HomePage() {
                   setSelectedModelo("");
                   setSelectedAno("");
                 }}
-                className="h-11 px-3 rounded-lg border border-gray-200 text-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="h-11 px-3 rounded-lg border border-gray-200 text-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-bbc"
               >
                 <option value="">Marca</option>
                 {marcas.map((m) => (
@@ -603,7 +603,7 @@ export default function HomePage() {
                   setSelectedAno("");
                 }}
                 disabled={!selectedMarca}
-                className="h-11 px-3 rounded-lg border border-gray-200 text-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:opacity-50"
+                className="h-11 px-3 rounded-lg border border-gray-200 text-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-bbc disabled:opacity-50"
               >
                 <option value="">Modelo</option>
                 {selectedMarca &&
@@ -617,7 +617,7 @@ export default function HomePage() {
                 value={selectedAno}
                 onChange={(e) => setSelectedAno(e.target.value)}
                 disabled={!selectedModelo}
-                className="h-11 px-3 rounded-lg border border-gray-200 text-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:opacity-50"
+                className="h-11 px-3 rounded-lg border border-gray-200 text-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-bbc disabled:opacity-50"
               >
                 <option value="">Ano</option>
                 {anos.map((a) => (
@@ -627,7 +627,7 @@ export default function HomePage() {
                 ))}
               </select>
               <Link href={`/loja?veiculo=${selectedMarca}+${selectedModelo}+${selectedAno}`}>
-                <Button className="w-full h-11 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-lg">
+                <Button className="w-full h-11 bg-bbc hover:bg-bbc-dark text-white font-bold text-sm rounded-lg">
                   BUSCAR PEÇAS
                 </Button>
               </Link>
@@ -676,7 +676,7 @@ export default function HomePage() {
                     </span>
                   </div>
                   <div className="p-3 text-center">
-                    <h3 className="text-sm font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
+                    <h3 className="text-sm font-semibold text-gray-900 group-hover:text-bbc transition-colors">
                       {cat.name}
                     </h3>
                     <p className="text-xs text-gray-400 mt-0.5">{cat.count}</p>
@@ -707,7 +707,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/loja?ofertas=true"
-              className="hidden sm:flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-700"
+              className="hidden sm:flex items-center gap-1 text-sm font-medium text-bbc hover:text-bbc-dark"
             >
               Ver todos <ArrowRight className="h-4 w-4" />
             </Link>
@@ -724,7 +724,7 @@ export default function HomePage() {
           <div className="mt-4 text-center sm:hidden">
             <Link
               href="/loja?ofertas=true"
-              className="inline-flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-700"
+              className="inline-flex items-center gap-1 text-sm font-medium text-bbc hover:text-bbc-dark"
             >
               Ver todos <ArrowRight className="h-4 w-4" />
             </Link>
@@ -733,7 +733,7 @@ export default function HomePage() {
       </section>
 
       {/* PROMOÇÃO BANNER */}
-      <section className="relative bg-gradient-to-r from-red-700 to-red-900 py-14 lg:py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-bbc-dark to-bbc-menu py-14 lg:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="w-full h-full bg-repeat"
@@ -755,13 +755,13 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               PEÇAS COM ATÉ <span className="text-yellow-300">40% OFF</span>
             </h2>
-            <p className="text-lg text-red-100 mt-3 max-w-xl mx-auto">
+            <p className="text-lg text-blue-100 mt-3 max-w-xl mx-auto">
               Aproveite descontos imperdíveis em peças originais. Estoque
               limitado!
             </p>
             <div className="flex justify-center gap-3 mt-8">
               <Link href="/loja?ofertas=true">
-                <Button className="bg-white text-red-700 hover:bg-gray-100 font-bold text-sm px-8 h-12 rounded-lg">
+                <Button className="bg-white text-bbc-dark hover:bg-gray-100 font-bold text-sm px-8 h-12 rounded-lg">
                   VER OFERTAS
                 </Button>
               </Link>
@@ -797,7 +797,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/loja?mais-vendidos=true"
-              className="hidden sm:flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-700"
+              className="hidden sm:flex items-center gap-1 text-sm font-medium text-bbc hover:text-bbc-dark"
             >
               Ver todos <ArrowRight className="h-4 w-4" />
             </Link>
@@ -810,7 +810,7 @@ export default function HomePage() {
           <div className="mt-6 text-center sm:hidden">
             <Link
               href="/loja?mais-vendidos=true"
-              className="inline-flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-700"
+              className="inline-flex items-center gap-1 text-sm font-medium text-bbc hover:text-bbc-dark"
             >
               Ver todos <ArrowRight className="h-4 w-4" />
             </Link>
@@ -843,7 +843,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex-shrink-0 w-32 h-16 bg-white rounded-xl border border-gray-100 flex items-center justify-center hover:shadow-md hover:border-red-100 transition-all cursor-default"
+                  className="flex-shrink-0 w-32 h-16 bg-white rounded-xl border border-gray-100 flex items-center justify-center hover:shadow-md hover:border-accent transition-all cursor-default"
                 >
                   <span className="text-sm font-bold text-gray-700">
                     {brand}
@@ -886,7 +886,7 @@ export default function HomePage() {
                   &ldquo;{review.comment}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 mt-4 pt-3 border-t border-gray-50">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white text-xs font-bold">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-bbc-light to-bbc-dark flex items-center justify-center text-white text-xs font-bold">
                     {review.name
                       .split(" ")
                       .map((n) => n[0])
@@ -916,7 +916,7 @@ export default function HomePage() {
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-white">
               Cadastre-se e ganhe{" "}
-              <span className="text-red-500">10% OFF</span>
+              <span className="text-bbc-light">10% OFF</span>
             </h2>
             <p className="text-gray-400 mt-3">
               Receba promoções exclusivas, novidades e ofertas especiais no seu
@@ -942,11 +942,11 @@ export default function HomePage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1 h-12 px-4 rounded-lg border-gray-700 bg-gray-900 text-white placeholder-gray-500 focus:ring-red-500"
+                  className="flex-1 h-12 px-4 rounded-lg border-gray-700 bg-gray-900 text-white placeholder-gray-500 focus:ring-bbc"
                 />
                 <Button
                   type="submit"
-                  className="h-12 px-8 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg whitespace-nowrap"
+                  className="h-12 px-8 bg-bbc hover:bg-bbc-dark text-white font-bold rounded-lg whitespace-nowrap"
                 >
                   CADASTRE-SE
                 </Button>

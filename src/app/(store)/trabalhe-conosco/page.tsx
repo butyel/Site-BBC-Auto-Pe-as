@@ -44,8 +44,8 @@ export default function TrabalheConoscoPage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
-            <Briefcase className="h-16 w-16 text-red-500 mx-auto mb-6" />
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Trabalhe <span className="text-red-500">Conosco</span></h1>
+            <Briefcase className="h-16 w-16 text-bbc-light mx-auto mb-6" />
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Trabalhe <span className="text-bbc-light">Conosco</span></h1>
             <p className="text-lg text-gray-300">
               Faça parte do time BBC AUTO PEÇAS. Buscamos profissionais apaixonados por automóveis e comprometidos com a excelência.
             </p>
@@ -57,7 +57,7 @@ export default function TrabalheConoscoPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Por que trabalhar <span className="text-red-600">conosco?</span></h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Por que trabalhar <span className="text-bbc">conosco?</span></h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -68,8 +68,8 @@ export default function TrabalheConoscoPage() {
                     transition={{ delay: index * 0.1 }}
                     className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center mb-3">
-                      <benefit.icon className="h-5 w-5 text-red-600" />
+                    <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center mb-3">
+                      <benefit.icon className="h-5 w-5 text-bbc" />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-1">{benefit.title}</h3>
                     <p className="text-sm text-gray-500">{benefit.description}</p>
@@ -77,7 +77,7 @@ export default function TrabalheConoscoPage() {
                 ))}
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Vagas <span className="text-red-600">Abertas</span></h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Vagas <span className="text-bbc">Abertas</span></h2>
               <div className="space-y-4">
                 {openPositions.map((position) => (
                   <motion.div
@@ -85,7 +85,7 @@ export default function TrabalheConoscoPage() {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:border-red-200 transition-all cursor-pointer"
+                    className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:border-accent transition-all cursor-pointer"
                   >
                     <div className="flex justify-between items-start">
                       <div>
@@ -141,14 +141,14 @@ export default function TrabalheConoscoPage() {
                         value={formData.mensagem}
                         onChange={handleChange}
                         rows={4}
-                        className="mt-1 w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
+                        className="mt-1 w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent resize-none"
                         required
                       />
                     </div>
                     <Button
                       type="submit"
                       disabled={loading}
-                      className="w-full h-12 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl"
+                      className="w-full h-12 bg-bbc hover:bg-bbc-dark text-white font-bold rounded-xl"
                     >
                       {loading ? (
                         <span className="flex items-center gap-2">

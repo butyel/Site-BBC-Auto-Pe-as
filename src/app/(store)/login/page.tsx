@@ -39,7 +39,7 @@ export default function LoginPage() {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
           <div className="text-center mb-6">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-bbc rounded-xl flex items-center justify-center">
                 <Car className="h-6 w-6 text-white" />
               </div>
             </Link>
@@ -51,7 +51,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
-              <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600">
+              <div className="p-3 bg-accent border border-accent rounded-lg text-sm text-bbc">
                 {error}
               </div>
             )}
@@ -96,7 +96,7 @@ export default function LoginPage() {
             <div className="flex justify-end">
               <Link
                 href="/recuperar-senha"
-                className="text-sm text-red-600 hover:text-red-700 font-medium"
+                className="text-sm text-bbc hover:text-bbc-dark font-medium"
               >
                 Esqueci minha senha
               </Link>
@@ -105,7 +105,7 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full h-12 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl"
+              className="w-full h-12 bg-bbc hover:bg-bbc-dark text-white font-bold text-sm rounded-xl"
             >
               {loading ? (
                 <span className="flex items-center gap-2">
@@ -126,7 +126,7 @@ export default function LoginPage() {
               Não tem conta?{" "}
               <Link
                 href="/cadastro"
-                className="text-red-600 hover:text-red-700 font-semibold"
+                className="text-bbc hover:text-bbc-dark font-semibold"
               >
                 Cadastre-se
               </Link>

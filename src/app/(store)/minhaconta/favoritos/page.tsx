@@ -47,9 +47,9 @@ export default function FavoritosPage() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-bbc transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/minhaconta" className="hover:text-red-600 transition-colors">Minha Conta</Link>
+            <Link href="/minhaconta" className="hover:text-bbc transition-colors">Minha Conta</Link>
             <span>/</span>
             <span className="text-gray-900 font-medium">Favoritos</span>
           </div>
@@ -81,7 +81,7 @@ export default function FavoritosPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ delay: i * 0.03 }}
-                    className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300"
+                    className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-accent transition-all duration-300"
                   >
                     <Link
                       href={`/produto/${product.slug}`}
@@ -93,7 +93,7 @@ export default function FavoritosPage() {
                         </div>
                       </div>
                       {discount > 0 && (
-                        <Badge className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md">
+                        <Badge className="absolute top-2 left-2 bg-bbc text-white text-xs font-bold px-2 py-1 rounded-md">
                           -{discount}%
                         </Badge>
                       )}
@@ -102,9 +102,9 @@ export default function FavoritosPage() {
                           e.preventDefault();
                           handleRemove(product.id);
                         }}
-                        className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full hover:bg-red-50 transition-all shadow-sm"
+                        className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full hover:bg-accent transition-all shadow-sm"
                       >
-                        <Trash2 className="h-4 w-4 text-gray-600 hover:text-red-500" />
+                        <Trash2 className="h-4 w-4 text-gray-600 hover:text-bbc-light" />
                       </button>
                     </Link>
                     <div className="p-3">
@@ -112,7 +112,7 @@ export default function FavoritosPage() {
                         {typeof product.brand === "object" && product.brand ? product.brand.name : String(product.brand || "Marca")}
                       </span>
                       <Link href={`/produto/${product.slug}`}>
-                        <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-red-600 transition-colors leading-snug">
+                        <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-bbc transition-colors leading-snug">
                           {product.name}
                         </h3>
                       </Link>
@@ -122,7 +122,7 @@ export default function FavoritosPage() {
                             {formatPrice(product.comparePrice)}
                           </span>
                         )}
-                        <div className="text-lg font-bold text-red-600">
+                        <div className="text-lg font-bold text-bbc">
                           {formatPrice(product.price)}
                         </div>
                         <span className="text-xs text-gray-500">
@@ -134,7 +134,7 @@ export default function FavoritosPage() {
                         className={`w-full mt-2 h-9 text-xs font-semibold rounded-lg transition-all ${
                           isAdded
                             ? "bg-green-600 hover:bg-green-700"
-                            : "bg-red-600 hover:bg-red-700"
+                            : "bg-bbc hover:bg-bbc-dark"
                         } text-white`}
                       >
                         <ShoppingCart className="h-3.5 w-3.5 mr-1.5" />
@@ -159,7 +159,7 @@ export default function FavoritosPage() {
             </p>
             <div className="flex items-center justify-center gap-3 mt-6">
               <Link href="/loja">
-                <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-sm h-10 px-6 rounded-lg">
+                <Button className="bg-bbc hover:bg-bbc-dark text-white font-semibold text-sm h-10 px-6 rounded-lg">
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   VER PRODUTOS
                 </Button>
@@ -171,7 +171,7 @@ export default function FavoritosPage() {
         <div className="mt-6">
           <Link
             href="/minhaconta"
-            className="inline-flex items-center gap-1.5 text-sm text-red-600 hover:text-red-700 font-medium"
+            className="inline-flex items-center gap-1.5 text-sm text-bbc hover:text-bbc-dark font-medium"
           >
             <ArrowLeft className="h-4 w-4" />
             Voltar para Minha Conta

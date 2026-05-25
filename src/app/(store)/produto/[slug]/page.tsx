@@ -143,11 +143,11 @@ export default function ProductPage({
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-bbc transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/loja" className="hover:text-red-600 transition-colors">Loja</Link>
+            <Link href="/loja" className="hover:text-bbc transition-colors">Loja</Link>
             <span>/</span>
-            <Link href="/loja?categoria=freios" className="hover:text-red-600 transition-colors">Freios</Link>
+            <Link href="/loja?categoria=freios" className="hover:text-bbc transition-colors">Freios</Link>
             <span>/</span>
             <span className="text-gray-900 font-medium truncate">{product.name}</span>
           </div>
@@ -168,7 +168,7 @@ export default function ProductPage({
                 </div>
                 <div className="absolute inset-0 group-hover:bg-black/5 transition-colors" />
                 {discount > 0 && (
-                  <Badge className="absolute top-4 left-4 bg-red-600 text-white text-sm font-bold px-3 py-1.5 rounded-lg">
+                  <Badge className="absolute top-4 left-4 bg-bbc text-white text-sm font-bold px-3 py-1.5 rounded-lg">
                     -{discount}%
                   </Badge>
                 )}
@@ -179,7 +179,7 @@ export default function ProductPage({
                   <Heart
                     className={cn(
                       "h-5 w-5 transition-colors",
-                      isFav ? "fill-red-500 text-red-500" : "text-gray-600"
+                      isFav ? "fill-red-500 text-bbc-light" : "text-gray-600"
                     )}
                   />
                 </button>
@@ -194,7 +194,7 @@ export default function ProductPage({
                     className={cn(
                       "w-16 h-16 flex-shrink-0 rounded-xl border-2 transition-all overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200",
                       selectedImage === i
-                        ? "border-red-500 ring-1 ring-red-500"
+                        ? "border-bbc ring-1 ring-bbc"
                         : "border-gray-200 hover:border-gray-300"
                     )}
                   >
@@ -243,7 +243,7 @@ export default function ProductPage({
                   </span>
                 )}
                 <div className="flex items-baseline gap-3">
-                  <span className="text-3xl lg:text-4xl font-bold text-red-600">
+                  <span className="text-3xl lg:text-4xl font-bold text-bbc">
                     {formatPrice(product.price)}
                   </span>
                   {discount > 0 && (
@@ -270,7 +270,7 @@ export default function ProductPage({
                     Apenas {product.stock} unidades restantes
                   </span>
                 ) : (
-                  <span className="flex items-center gap-1.5 text-sm text-red-600">
+                  <span className="flex items-center gap-1.5 text-sm text-bbc">
                     Fora de estoque
                   </span>
                 )}
@@ -311,7 +311,7 @@ export default function ProductPage({
                       "h-12 text-sm font-bold rounded-xl transition-all",
                       addedToCart
                         ? "bg-green-600 hover:bg-green-700"
-                        : "bg-red-600 hover:bg-red-700"
+                        : "bg-bbc hover:bg-bbc-dark"
                     )}
                   >
                     {addedToCart ? (
@@ -353,7 +353,7 @@ export default function ProductPage({
                   { icon: RotateCcw, label: "Troca Fácil", desc: "30 dias" },
                 ].map((item) => (
                   <div key={item.label} className="text-center">
-                    <item.icon className="h-5 w-5 mx-auto text-red-500" />
+                    <item.icon className="h-5 w-5 mx-auto text-bbc-light" />
                     <p className="text-xs font-semibold text-gray-900 mt-1">{item.label}</p>
                     <p className="text-[10px] text-gray-400">{item.desc}</p>
                   </div>
@@ -374,7 +374,7 @@ export default function ProductPage({
                   className={cn(
                     "px-4 sm:px-6 py-3.5 text-sm font-medium transition-colors relative",
                     activeTab === tab.id
-                      ? "text-red-600"
+                      ? "text-bbc"
                       : "text-gray-500 hover:text-gray-900"
                   )}
                 >
@@ -382,7 +382,7 @@ export default function ProductPage({
                   {activeTab === tab.id && (
                     <motion.div
                       layoutId="tab-indicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-600"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-bbc"
                     />
                   )}
                 </button>
@@ -429,7 +429,7 @@ export default function ProductPage({
                       key={v.id}
                       className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg text-sm"
                     >
-                      <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-xs font-bold text-red-600">
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-xs font-bold text-bbc">
                         {v.brand[0]}
                       </div>
                       <div>
@@ -454,7 +454,7 @@ export default function ProductPage({
                       <div key={review.id} className="p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white text-xs font-bold">
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-bbc-light to-bbc-dark flex items-center justify-center text-white text-xs font-bold">
                               {review.name.split(" ").map((n) => n[0]).join("")}
                             </div>
                             <div>
@@ -504,7 +504,7 @@ export default function ProductPage({
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300"
+                  className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-accent transition-all duration-300"
                 >
                   <Link href={`/produto/${relProduct.slug}`} className="relative block">
                     <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
@@ -513,7 +513,7 @@ export default function ProductPage({
                       </div>
                     </div>
                     {relDiscount > 0 && (
-                      <Badge className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold">
+                      <Badge className="absolute top-2 left-2 bg-bbc text-white text-xs font-bold">
                         -{relDiscount}%
                       </Badge>
                     )}
@@ -521,7 +521,7 @@ export default function ProductPage({
                   <div className="p-3">
                     <span className="text-[11px] text-gray-500 uppercase tracking-wider">{relProduct.brand}</span>
                     <Link href={`/produto/${relProduct.slug}`}>
-                      <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-red-600 transition-colors">
+                      <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-bbc transition-colors">
                         {relProduct.name}
                       </h3>
                     </Link>
@@ -529,7 +529,7 @@ export default function ProductPage({
                       {relProduct.comparePrice && (
                         <span className="text-xs text-gray-400 line-through">{formatPrice(relProduct.comparePrice)}</span>
                       )}
-                      <div className="text-base font-bold text-red-600">{formatPrice(relProduct.price)}</div>
+                      <div className="text-base font-bold text-bbc">{formatPrice(relProduct.price)}</div>
                       <span className="text-xs text-gray-500">
                         {relProduct.installments}x de {formatPrice(relInstallment)}
                       </span>

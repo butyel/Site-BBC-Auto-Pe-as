@@ -149,9 +149,9 @@ export default function EnderecosPage() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-bbc transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/minhaconta" className="hover:text-red-600 transition-colors">Minha Conta</Link>
+            <Link href="/minhaconta" className="hover:text-bbc transition-colors">Minha Conta</Link>
             <span>/</span>
             <span className="text-gray-900 font-medium">Endereços</span>
           </div>
@@ -166,7 +166,7 @@ export default function EnderecosPage() {
             </div>
             <Button
               onClick={openNewAddress}
-              className="bg-red-600 hover:bg-red-700 text-white font-semibold text-sm h-10 px-4 rounded-lg"
+              className="bg-bbc hover:bg-bbc-dark text-white font-semibold text-sm h-10 px-4 rounded-lg"
             >
               <Plus className="h-4 w-4 mr-1.5" />
               NOVO ENDEREÇO
@@ -187,19 +187,19 @@ export default function EnderecosPage() {
                   exit={{ opacity: 0, x: -100 }}
                   transition={{ delay: i * 0.05 }}
                   className={`bg-white rounded-xl border-2 p-5 transition-all ${
-                    addr.isDefault ? "border-red-500" : "border-gray-100 hover:border-gray-200"
+                    addr.isDefault ? "border-bbc" : "border-gray-100 hover:border-gray-200"
                   }`}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex items-start gap-3">
                       <div
                         className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                          addr.isDefault ? "bg-red-50" : "bg-gray-100"
+                          addr.isDefault ? "bg-accent" : "bg-gray-100"
                         }`}
                       >
                         <Home
                           className={`h-5 w-5 ${
-                            addr.isDefault ? "text-red-600" : "text-gray-500"
+                            addr.isDefault ? "text-bbc" : "text-gray-500"
                           }`}
                         />
                       </div>
@@ -209,7 +209,7 @@ export default function EnderecosPage() {
                             {addr.street}, {addr.number}
                           </p>
                           {addr.isDefault && (
-                            <Badge className="bg-red-100 text-red-700 text-[10px] font-medium px-2 py-0.5 rounded-full">
+                            <Badge className="bg-red-100 text-bbc-dark text-[10px] font-medium px-2 py-0.5 rounded-full">
                               Principal
                             </Badge>
                           )}
@@ -228,7 +228,7 @@ export default function EnderecosPage() {
                     {!addr.isDefault && (
                       <button
                         onClick={() => handleSetDefault(addr.id)}
-                        className="flex items-center gap-1 text-xs text-gray-500 hover:text-red-600 transition-colors font-medium"
+                        className="flex items-center gap-1 text-xs text-gray-500 hover:text-bbc transition-colors font-medium"
                       >
                         <Star className="h-3.5 w-3.5" />
                         Definir como principal
@@ -243,7 +243,7 @@ export default function EnderecosPage() {
                     </button>
                     <button
                       onClick={() => handleDelete(addr.id)}
-                      className="flex items-center gap-1 text-xs text-gray-500 hover:text-red-600 transition-colors font-medium"
+                      className="flex items-center gap-1 text-xs text-gray-500 hover:text-bbc transition-colors font-medium"
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                       Excluir
@@ -264,7 +264,7 @@ export default function EnderecosPage() {
             </p>
             <Button
               onClick={openNewAddress}
-              className="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm h-10 px-6 rounded-lg"
+              className="mt-4 bg-bbc hover:bg-bbc-dark text-white font-semibold text-sm h-10 px-6 rounded-lg"
             >
               <Plus className="h-4 w-4 mr-1.5" />
               ADICIONAR ENDEREÇO
@@ -275,7 +275,7 @@ export default function EnderecosPage() {
         <div className="mt-6">
           <Link
             href="/minhaconta"
-            className="inline-flex items-center gap-1.5 text-sm text-red-600 hover:text-red-700 font-medium"
+            className="inline-flex items-center gap-1.5 text-sm text-bbc hover:text-bbc-dark font-medium"
           >
             <ArrowLeft className="h-4 w-4" />
             Voltar para Minha Conta
@@ -362,7 +362,7 @@ export default function EnderecosPage() {
                 type="checkbox"
                 checked={formDefault}
                 onChange={(e) => setFormDefault(e.target.checked)}
-                className="w-4 h-4 rounded border-gray-300 text-red-600 focus:ring-red-500"
+                className="w-4 h-4 rounded border-gray-300 text-bbc focus:ring-bbc"
               />
               <span className="text-sm text-gray-700">
                 Definir como endereço principal
@@ -374,7 +374,7 @@ export default function EnderecosPage() {
               </Button>
               <Button
                 onClick={handleSave}
-                className="bg-red-600 hover:bg-red-700 text-white font-semibold text-sm"
+                className="bg-bbc hover:bg-bbc-dark text-white font-semibold text-sm"
               >
                 {editingAddress ? "SALVAR ALTERAÇÕES" : "SALVAR ENDEREÇO"}
               </Button>

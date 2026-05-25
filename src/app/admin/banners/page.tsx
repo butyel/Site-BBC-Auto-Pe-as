@@ -281,13 +281,13 @@ export default function AdminBanners() {
                     </button>
                     <button
                       onClick={() => handleEdit(banner)}
-                      className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-red-50"
+                      className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-accent"
                     >
                       <Edit className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(banner.id)}
-                      className="p-1.5 rounded-lg text-gray-500 hover:text-red-600 hover:bg-red-50"
+                      className="p-1.5 rounded-lg text-gray-500 hover:text-bbc hover:bg-accent"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>

@@ -174,13 +174,13 @@ export default function AdminUsuarios() {
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => handleEdit(user)}
-                          className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-red-50 transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-accent transition-colors"
                         >
                           <Edit className="w-4 h-4" />
                         </button>
                         <button
                           onClick={() => handleDelete(user.id)}
-                          className="p-1.5 rounded-lg text-gray-500 hover:text-red-600 hover:bg-red-50 transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-bbc hover:bg-accent transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>

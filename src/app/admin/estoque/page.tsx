@@ -48,7 +48,7 @@ function getStockStatus(item: StockItem): StockStatus {
 const statusConfig = {
   normal: { label: "Normal", class: "text-green-600 bg-green-50 border-green-200" },
   low: { label: "Baixo", class: "text-yellow-600 bg-yellow-50 border-yellow-200" },
-  out: { label: "Esgotado", class: "text-red-600 bg-red-50 border-red-200" },
+  out: { label: "Esgotado", class: "text-bbc bg-accent border-accent" },
 };
 
 export default function AdminEstoque() {
@@ -142,7 +142,7 @@ export default function AdminEstoque() {
                       key={item.id}
                       className={`border-b border-gray-100 hover:bg-gray-50 ${
                         status === "out"
-                          ? "bg-red-50/30"
+                          ? "bg-accent/30"
                           : status === "low"
                           ? "bg-yellow-50/30"
                           : ""
@@ -163,7 +163,7 @@ export default function AdminEstoque() {
                         <span
                           className={`text-lg font-bold ${
                             status === "out"
-                              ? "text-red-600"
+                              ? "text-bbc"
                               : status === "low"
                               ? "text-yellow-600"
                               : "text-green-600"
@@ -240,7 +240,7 @@ export default function AdminEstoque() {
               <div className="flex items-center gap-2 text-sm">
                 <span>Status atual:</span>
                 {newStockValue === 0 ? (
-                  <span className="text-red-600 font-medium">Esgotado</span>
+                  <span className="text-bbc font-medium">Esgotado</span>
                 ) : newStockValue <= editingItem.stockMin ? (
                   <span className="text-yellow-600 font-medium">Estoque Baixo</span>
                 ) : (

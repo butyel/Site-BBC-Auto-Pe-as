@@ -74,7 +74,7 @@ export default function MobileMenu({
 
       <div className="fixed inset-y-0 left-0 w-full max-w-sm bg-white shadow-xl flex flex-col">
         <div className="flex items-center justify-between p-4 border-b border-gray-100">
-          <span className="text-lg font-bold text-red-600">
+          <span className="text-lg font-bold text-bbc">
             BBC AUTO PEÇAS
           </span>
           <button
@@ -93,7 +93,7 @@ export default function MobileMenu({
               placeholder="Buscar produtos..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent"
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function MobileMenu({
               onClick={onClose}
               className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors mb-4"
             >
-              <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-bbc flex items-center justify-center">
                 <span className="text-white font-semibold text-sm">U</span>
               </div>
               <div>
@@ -130,7 +130,7 @@ export default function MobileMenu({
                         className={cn(
                           "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-colors",
                           expandedCat === cat.slug
-                            ? "bg-red-50 text-red-600 font-medium"
+                            ? "bg-accent text-bbc font-medium"
                             : "text-gray-700 hover:bg-gray-50"
                         )}
                       >
@@ -143,11 +143,11 @@ export default function MobileMenu({
                         />
                       </button>
                       {expandedCat === cat.slug && (
-                        <div className="ml-4 mt-1 space-y-1 border-l-2 border-red-200 pl-3">
+                        <div className="ml-4 mt-1 space-y-1 border-l-2 border-accent pl-3">
                           <Link
                             href={`/loja?categoria=${cat.slug}`}
                             onClick={onClose}
-                            className="block px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg font-medium"
+                            className="block px-3 py-2 text-sm text-bbc hover:bg-accent rounded-lg font-medium"
                           >
                             Ver Tudo
                           </Link>
@@ -183,7 +183,7 @@ export default function MobileMenu({
           <Link
             href="/carrinho"
             onClick={onClose}
-            className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors"
+            className="flex items-center gap-2 text-sm text-gray-600 hover:text-bbc transition-colors"
           >
             <span>🛒</span>
             <span>Meu Carrinho</span>
@@ -191,7 +191,7 @@ export default function MobileMenu({
           <Link
             href="/minhaconta/favoritos"
             onClick={onClose}
-            className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors"
+            className="flex items-center gap-2 text-sm text-gray-600 hover:text-bbc transition-colors"
           >
             <span>♡</span>
             <span>Meus Favoritos</span>

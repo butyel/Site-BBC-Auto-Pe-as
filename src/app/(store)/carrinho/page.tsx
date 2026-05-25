@@ -114,7 +114,7 @@ export default function CartPage() {
               Adicione produtos ao carrinho para realizar sua compra.
             </p>
             <Link href="/loja">
-              <Button className="mt-6 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 h-12 rounded-xl">
+              <Button className="mt-6 bg-bbc hover:bg-bbc-dark text-white font-semibold px-8 h-12 rounded-xl">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 VOLTAR AS COMPRAS
               </Button>
@@ -130,7 +130,7 @@ export default function CartPage() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-bbc transition-colors">Home</Link>
             <span>/</span>
             <span className="text-gray-900 font-medium">Carrinho</span>
           </div>
@@ -175,7 +175,7 @@ export default function CartPage() {
                           <div>
                             <Link
                               href={`/produto/${item.product.slug}`}
-                              className="text-sm sm:text-base font-medium text-gray-900 hover:text-red-600 transition-colors line-clamp-1"
+                              className="text-sm sm:text-base font-medium text-gray-900 hover:text-bbc transition-colors line-clamp-1"
                             >
                               {item.product.name}
                             </Link>
@@ -185,9 +185,9 @@ export default function CartPage() {
                           </div>
                           <button
                             onClick={() => removeItem(item.product.id)}
-                            className="p-1.5 hover:bg-red-50 rounded-lg transition-colors flex-shrink-0 ml-2"
+                            className="p-1.5 hover:bg-accent rounded-lg transition-colors flex-shrink-0 ml-2"
                           >
-                            <Trash2 className="h-4 w-4 text-gray-400 hover:text-red-500" />
+                            <Trash2 className="h-4 w-4 text-gray-400 hover:text-bbc-light" />
                           </button>
                         </div>
 
@@ -215,7 +215,7 @@ export default function CartPage() {
                           </div>
 
                           <div className="text-right">
-                            <div className="text-base font-bold text-red-600">
+                            <div className="text-base font-bold text-bbc">
                               {formatPrice(item.product.price * item.quantity)}
                             </div>
                             {item.quantity > 1 && (
@@ -243,7 +243,7 @@ export default function CartPage() {
 
             <Link
               href="/loja"
-              className="inline-flex items-center gap-1.5 text-sm text-red-600 hover:text-red-700 font-medium mt-2"
+              className="inline-flex items-center gap-1.5 text-sm text-bbc hover:text-bbc-dark font-medium mt-2"
             >
               <ArrowLeft className="h-4 w-4" />
               CONTINUAR COMPRANDO
@@ -275,14 +275,14 @@ export default function CartPage() {
                   <Button
                     onClick={handleApplyCoupon}
                     variant="outline"
-                    className="h-10 text-sm border-red-200 text-red-600 hover:bg-red-50"
+                    className="h-10 text-sm border-accent text-bbc hover:bg-accent"
                   >
                     <Percent className="h-4 w-4 mr-1" />
                     APLICAR
                   </Button>
                 </div>
                 {couponError && (
-                  <p className="text-xs text-red-500 mt-1">{couponError}</p>
+                  <p className="text-xs text-bbc-light mt-1">{couponError}</p>
                 )}
                 {coupon && (
                   <div className="flex items-center justify-between mt-2 p-2 bg-green-50 rounded-lg">
@@ -353,7 +353,7 @@ export default function CartPage() {
                 <Separator />
                 <div className="flex justify-between text-base font-bold text-gray-900">
                   <span>Total</span>
-                  <span className="text-red-600">{formatPrice(finalTotal)}</span>
+                  <span className="text-bbc">{formatPrice(finalTotal)}</span>
                 </div>
               </div>
 
@@ -362,7 +362,7 @@ export default function CartPage() {
               </p>
 
               <Link href="/checkout">
-                <Button className="w-full mt-4 h-12 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl">
+                <Button className="w-full mt-4 h-12 bg-bbc hover:bg-bbc-dark text-white font-bold text-sm rounded-xl">
                   FINALIZAR PEDIDO
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>

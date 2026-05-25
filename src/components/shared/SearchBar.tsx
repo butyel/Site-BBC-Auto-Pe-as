@@ -112,7 +112,7 @@ export default function SearchBar({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={placeholder}
-            className="w-full h-10 pl-10 pr-4 rounded-lg border border-gray-200 bg-gray-50 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent focus:bg-white transition-colors"
+            className="w-full h-10 pl-10 pr-4 rounded-lg border border-gray-200 bg-gray-50 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent focus:bg-white transition-colors"
             onFocus={() => results.length > 0 && setIsOpen(true)}
           />
         </div>
@@ -152,7 +152,7 @@ export default function SearchBar({
                       <p className="text-sm text-gray-900 truncate">
                         {result.name}
                       </p>
-                      <p className="text-sm font-semibold text-red-600">
+                      <p className="text-sm font-semibold text-bbc">
                         R$ {result.price.toFixed(2)}
                       </p>
                     </div>
@@ -163,7 +163,7 @@ export default function SearchBar({
                 <Link
                   href={`/loja?search=${encodeURIComponent(debouncedQuery)}`}
                   onClick={handleSelect}
-                  className="block px-4 py-2.5 text-center text-sm text-red-600 hover:bg-red-50 font-medium border-t border-gray-100 transition-colors"
+                  className="block px-4 py-2.5 text-center text-sm text-bbc hover:bg-accent font-medium border-t border-gray-100 transition-colors"
                 >
                   Ver todos os resultados para &ldquo;{debouncedQuery}&rdquo;
                 </Link>

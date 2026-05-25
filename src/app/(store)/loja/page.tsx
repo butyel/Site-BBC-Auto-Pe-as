@@ -91,7 +91,7 @@ function ProductCard({ product }: { product: ProductData }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-red-100 transition-all duration-300 flex flex-col"
+      className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-accent transition-all duration-300 flex flex-col"
     >
       <Link href={`/produto/${product.slug}`} className="relative">
         <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
@@ -100,12 +100,12 @@ function ProductCard({ product }: { product: ProductData }) {
           </div>
         </div>
         {discount > 0 && (
-          <Badge className="absolute top-2 left-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-2 py-1 rounded-md">
+          <Badge className="absolute top-2 left-2 bg-bbc hover:bg-bbc-dark text-white text-xs font-bold px-2 py-1 rounded-md">
             -{discount}%
           </Badge>
         )}
-        <button className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-50">
-          <Heart className="h-4 w-4 text-gray-600 hover:text-red-600" />
+        <button className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-accent">
+          <Heart className="h-4 w-4 text-gray-600 hover:text-bbc" />
         </button>
         <div className="absolute bottom-2 right-2 bg-white/90 rounded-full px-1.5 py-0.5 text-[10px] font-medium text-gray-500 flex items-center gap-0.5">
           <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
@@ -115,7 +115,7 @@ function ProductCard({ product }: { product: ProductData }) {
       <div className="p-3 flex flex-col flex-1">
         <span className="text-[11px] text-gray-500 uppercase tracking-wider">{product.brand}</span>
         <Link href={`/produto/${product.slug}`}>
-          <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-red-600 transition-colors leading-snug">
+          <h3 className="text-sm font-medium text-gray-900 mt-0.5 line-clamp-2 hover:text-bbc transition-colors leading-snug">
             {product.name}
           </h3>
         </Link>
@@ -123,14 +123,14 @@ function ProductCard({ product }: { product: ProductData }) {
           {product.comparePrice && (
             <span className="text-xs text-gray-400 line-through">{formatPrice(product.comparePrice)}</span>
           )}
-          <div className="text-lg font-bold text-red-600">{formatPrice(product.price)}</div>
+          <div className="text-lg font-bold text-bbc">{formatPrice(product.price)}</div>
           <span className="text-xs text-gray-500">
             ou {product.installments}x de {formatPrice(installmentValue)} sem juros
           </span>
           {product.stock <= 10 && product.stock > 0 && (
             <p className="text-[11px] text-amber-600 mt-1">Apenas {product.stock} unidades</p>
           )}
-          <Button className="w-full mt-2 h-9 text-xs bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg">
+          <Button className="w-full mt-2 h-9 text-xs bg-bbc hover:bg-bbc-dark text-white font-semibold rounded-lg">
             <ShoppingCart className="h-3.5 w-3.5 mr-1.5" />
             ADICIONAR
           </Button>
@@ -157,14 +157,14 @@ function ProductCardRow({ product }: { product: ProductData }) {
           <div className="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center text-xl opacity-40">🚗</div>
         </div>
         {discount > 0 && (
-          <Badge className="absolute top-1 left-1 bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded">-{discount}%</Badge>
+          <Badge className="absolute top-1 left-1 bg-bbc text-white text-[10px] px-1.5 py-0.5 rounded">-{discount}%</Badge>
         )}
       </Link>
       <div className="flex-1 min-w-0 flex flex-col justify-between">
         <div>
           <span className="text-[11px] text-gray-500 uppercase tracking-wider">{product.brand}</span>
           <Link href={`/produto/${product.slug}`}>
-            <h3 className="text-sm font-medium text-gray-900 hover:text-red-600 transition-colors">{product.name}</h3>
+            <h3 className="text-sm font-medium text-gray-900 hover:text-bbc transition-colors">{product.name}</h3>
           </Link>
           <div className="flex items-center gap-1 mt-0.5">
             <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
@@ -176,12 +176,12 @@ function ProductCardRow({ product }: { product: ProductData }) {
             {product.comparePrice && (
               <span className="text-xs text-gray-400 line-through">{formatPrice(product.comparePrice)}</span>
             )}
-            <div className="text-lg font-bold text-red-600">{formatPrice(product.price)}</div>
+            <div className="text-lg font-bold text-bbc">{formatPrice(product.price)}</div>
             <span className="text-xs text-gray-500">
               {product.installments}x de {formatPrice(installmentValue)}
             </span>
           </div>
-          <Button className="h-9 text-xs px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg">
+          <Button className="h-9 text-xs px-4 bg-bbc hover:bg-bbc-dark text-white font-semibold rounded-lg">
             <ShoppingCart className="h-3.5 w-3.5 mr-1.5" />
             ADICIONAR
           </Button>
@@ -347,7 +347,7 @@ function LojaPage() {
               <Checkbox
                 checked={selectedCategories.includes(cat.id)}
                 onCheckedChange={() => toggleCategory(cat.id)}
-                className="data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600"
+                className="data-[state=checked]:bg-bbc data-[state=checked]:border-bbc"
               />
               <span className="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">
                 {cat.name}
@@ -368,7 +368,7 @@ function LojaPage() {
               <Checkbox
                 checked={selectedBrands.includes(brand)}
                 onCheckedChange={() => toggleBrand(brand)}
-                className="data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600"
+                className="data-[state=checked]:bg-bbc data-[state=checked]:border-bbc"
               />
               <span className="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">
                 {brand}
@@ -421,7 +421,7 @@ function LojaPage() {
               setVehicleModel("");
               setVehicleYear("");
             }}
-            className="w-full h-9 px-3 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-500"
+            className="w-full h-9 px-3 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-bbc"
           >
             <option value="">Marca</option>
             {marcas.map((m) => (
@@ -432,7 +432,7 @@ function LojaPage() {
             value={vehicleModel}
             onChange={(e) => { setVehicleModel(e.target.value); setVehicleYear(""); }}
             disabled={!vehicleBrand}
-            className="w-full h-9 px-3 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-500 disabled:opacity-50"
+            className="w-full h-9 px-3 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-bbc disabled:opacity-50"
           >
             <option value="">Modelo</option>
             {vehicleBrand && modelos[vehicleBrand]?.map((m) => (
@@ -443,7 +443,7 @@ function LojaPage() {
             value={vehicleYear}
             onChange={(e) => setVehicleYear(e.target.value)}
             disabled={!vehicleModel}
-            className="w-full h-9 px-3 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-500 disabled:opacity-50"
+            className="w-full h-9 px-3 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-bbc disabled:opacity-50"
           >
             <option value="">Ano</option>
             {anos.map((a) => (
@@ -457,7 +457,7 @@ function LojaPage() {
         <Button
           variant="outline"
           onClick={clearFilters}
-          className="w-full text-sm border-red-200 text-red-600 hover:bg-red-50"
+          className="w-full text-sm border-accent text-bbc hover:bg-accent"
         >
           <X className="h-4 w-4 mr-1.5" />
           Limpar Filtros
@@ -472,7 +472,7 @@ function LojaPage() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-bbc transition-colors">Home</Link>
             <span>/</span>
             <span className="text-gray-900 font-medium">Loja</span>
           </div>
@@ -510,13 +510,13 @@ function LojaPage() {
                   {/* Filtros ativos */}
                   <div className="hidden sm:flex items-center gap-1.5 flex-wrap">
                     {selectedCategories.map((cat) => (
-                      <Badge key={cat} variant="secondary" className="text-xs gap-1 cursor-pointer hover:bg-red-50 hover:text-red-600" onClick={() => toggleCategory(cat)}>
+                      <Badge key={cat} variant="secondary" className="text-xs gap-1 cursor-pointer hover:bg-accent hover:text-bbc" onClick={() => toggleCategory(cat)}>
                         {categories.find((c) => c.id === cat)?.name}
                         <X className="h-3 w-3" />
                       </Badge>
                     ))}
                     {selectedBrands.map((b) => (
-                      <Badge key={b} variant="secondary" className="text-xs gap-1 cursor-pointer hover:bg-red-50 hover:text-red-600" onClick={() => toggleBrand(b)}>
+                      <Badge key={b} variant="secondary" className="text-xs gap-1 cursor-pointer hover:bg-accent hover:text-bbc" onClick={() => toggleBrand(b)}>
                         {b}
                         <X className="h-3 w-3" />
                       </Badge>
@@ -547,7 +547,7 @@ function LojaPage() {
                     <select
                       value={sortBy}
                       onChange={(e) => setSortBy(e.target.value)}
-                      className="h-9 px-2 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-500"
+                      className="h-9 px-2 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-bbc"
                     >
                       <option value="newest">Mais recentes</option>
                       <option value="price_asc">Menor preço</option>
@@ -562,13 +562,13 @@ function LojaPage() {
                   <div className="hidden sm:flex items-center border border-gray-200 rounded-lg">
                     <button
                       onClick={() => setViewMode("grid")}
-                      className={cn("p-2 rounded-l-lg transition-colors", viewMode === "grid" ? "bg-red-50 text-red-600" : "text-gray-400 hover:text-gray-600")}
+                      className={cn("p-2 rounded-l-lg transition-colors", viewMode === "grid" ? "bg-accent text-bbc" : "text-gray-400 hover:text-gray-600")}
                     >
                       <Grid3X3 className="h-4 w-4" />
                     </button>
                     <button
                       onClick={() => setViewMode("list")}
-                      className={cn("p-2 rounded-r-lg transition-colors", viewMode === "list" ? "bg-red-50 text-red-600" : "text-gray-400 hover:text-gray-600")}
+                      className={cn("p-2 rounded-r-lg transition-colors", viewMode === "list" ? "bg-accent text-bbc" : "text-gray-400 hover:text-gray-600")}
                     >
                       <List className="h-4 w-4" />
                     </button>
@@ -604,7 +604,7 @@ function LojaPage() {
                 <Button
                   variant="outline"
                   onClick={clearFilters}
-                  className="mt-4 text-sm border-red-200 text-red-600 hover:bg-red-50"
+                  className="mt-4 text-sm border-accent text-bbc hover:bg-accent"
                 >
                   Limpar Filtros
                 </Button>
@@ -631,7 +631,7 @@ function LojaPage() {
                     onClick={() => setCurrentPage(page)}
                     className={cn(
                       "text-sm min-w-[36px]",
-                      page === currentPage && "bg-red-600 hover:bg-red-700"
+                      page === currentPage && "bg-bbc hover:bg-bbc-dark"
                     )}
                   >
                     {page}

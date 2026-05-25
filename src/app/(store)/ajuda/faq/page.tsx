@@ -76,8 +76,8 @@ export default function FAQPage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
-            <HelpCircle className="h-16 w-16 text-red-500 mx-auto mb-6" />
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Perguntas <span className="text-red-500">Frequentes</span></h1>
+            <HelpCircle className="h-16 w-16 text-bbc-light mx-auto mb-6" />
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Perguntas <span className="text-bbc-light">Frequentes</span></h1>
             <p className="text-lg text-gray-300">Encontre respostas para as duvidas mais comuns sobre nossos produtos e servicos.</p>
           </motion.div>
         </div>
@@ -92,7 +92,7 @@ export default function FAQPage() {
               placeholder="Buscar perguntas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent"
             />
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function FAQPage() {
                 onClick={() => { setActiveCategory(index); setOpenItems([]); setSearchQuery(""); }}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   activeCategory === index
-                    ? "bg-red-600 text-white shadow-md"
+                    ? "bg-bbc text-white shadow-md"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -157,15 +157,15 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-8 text-white text-center"
+            className="mt-12 bg-gradient-to-br from-bbc to-bbc-secondary rounded-2xl p-8 text-white text-center"
           >
             <MessageCircle className="h-10 w-10 mx-auto mb-3" />
             <h2 className="text-xl font-bold mb-2">Nao encontrou o que procura?</h2>
-            <p className="text-red-100 text-sm mb-4">Nosso time de atendimento esta pronto para ajudar.</p>
+            <p className="text-blue-100 text-sm mb-4">Nosso time de atendimento esta pronto para ajudar.</p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link
                 href="/contato"
-                className="px-6 py-3 bg-white text-red-600 font-semibold rounded-xl hover:bg-red-50 transition-colors"
+                className="px-6 py-3 bg-white text-bbc font-semibold rounded-xl hover:bg-accent transition-colors"
               >
                 FALE CONOSCO
               </Link>

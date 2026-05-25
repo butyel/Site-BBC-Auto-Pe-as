@@ -214,7 +214,7 @@ export default function AdminProdutos() {
                       <span
                         className={
                           product.stock === 0
-                            ? "text-red-600 font-medium"
+                            ? "text-bbc font-medium"
                             : product.stock <= product.stockMin
                             ? "text-yellow-600 font-medium"
                             : ""
@@ -241,13 +241,13 @@ export default function AdminProdutos() {
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => handleEdit(product)}
-                          className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-red-50 transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-[#DC2626] hover:bg-accent transition-colors"
                         >
                           <Edit className="w-4 h-4" />
                         </button>
                         <button
                           onClick={() => handleDelete(product.id)}
-                          className="p-1.5 rounded-lg text-gray-500 hover:text-red-600 hover:bg-red-50 transition-colors"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-bbc hover:bg-accent transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -528,7 +528,7 @@ export default function AdminProdutos() {
                       />
                       <button
                         onClick={() => removeImage(i)}
-                        className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-accent0 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                       >
                         <X className="w-3 h-3" />
                       </button>

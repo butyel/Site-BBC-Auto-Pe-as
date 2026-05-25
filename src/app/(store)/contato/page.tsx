@@ -45,8 +45,8 @@ export default function ContatoPage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
-            <Mail className="h-16 w-16 text-red-500 mx-auto mb-6" />
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Fale <span className="text-red-500">Conosco</span></h1>
+            <Mail className="h-16 w-16 text-bbc-light mx-auto mb-6" />
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Fale <span className="text-bbc-light">Conosco</span></h1>
             <p className="text-lg text-gray-300">Estamos prontos para atender voce. Escolha o canal de sua preferencia.</p>
           </motion.div>
         </div>
@@ -65,10 +65,10 @@ export default function ContatoPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-red-200 transition-all group"
+                className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-accent transition-all group"
               >
-                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-600 transition-colors">
-                  <item.icon className="h-6 w-6 text-red-600 group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-4 group-hover:bg-bbc transition-colors">
+                  <item.icon className="h-6 w-6 text-bbc group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-1">{item.label}</h3>
                 <p className="text-sm text-gray-500">{item.value}</p>
@@ -79,7 +79,7 @@ export default function ContatoPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Envie sua <span className="text-red-600">Mensagem</span></h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Envie sua <span className="text-bbc">Mensagem</span></h2>
                 <p className="text-sm text-gray-500 mb-6">Responderemos em ate 24 horas uteis.</p>
 
                 {submitted ? (
@@ -108,7 +108,7 @@ export default function ContatoPage() {
                         id="assunto"
                         value={formData.assunto}
                         onChange={handleChange}
-                        className="mt-1 w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white"
+                        className="mt-1 w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent bg-white"
                         required
                       >
                         <option value="">Selecione um assunto</option>
@@ -128,14 +128,14 @@ export default function ContatoPage() {
                         value={formData.mensagem}
                         onChange={handleChange}
                         rows={5}
-                        className="mt-1 w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
+                        className="mt-1 w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent resize-none"
                         required
                       />
                     </div>
                     <Button
                       type="submit"
                       disabled={loading}
-                      className="w-full h-12 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl"
+                      className="w-full h-12 bg-bbc hover:bg-bbc-dark text-white font-bold rounded-xl"
                     >
                       {loading ? (
                         <span className="flex items-center gap-2">
@@ -156,7 +156,7 @@ export default function ContatoPage() {
 
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Perguntas <span className="text-red-600">Frequentes</span></h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Perguntas <span className="text-bbc">Frequentes</span></h2>
                 <div className="space-y-4">
                   {faqItems.map((item) => (
                     <details key={item.question} className="group">
@@ -169,21 +169,21 @@ export default function ContatoPage() {
                   ))}
                 </div>
                 <div className="mt-6 text-center">
-                  <Link href="/ajuda/faq" className="text-sm text-red-600 hover:text-red-700 font-medium">
+                  <Link href="/ajuda/faq" className="text-sm text-bbc hover:text-bbc-dark font-medium">
                     Ver todas as perguntas frequentes
                   </Link>
                 </div>
               </div>
 
-              <div className="mt-6 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-8 text-white text-center">
+              <div className="mt-6 bg-gradient-to-br from-bbc to-bbc-secondary rounded-2xl p-8 text-white text-center">
                 <MessageCircle className="h-10 w-10 mx-auto mb-3" />
                 <h3 className="text-xl font-bold mb-2">Atendimento via WhatsApp</h3>
-                <p className="text-red-100 text-sm mb-4">Nosso canal mais rapido de atendimento.</p>
+                <p className="text-blue-100 text-sm mb-4">Nosso canal mais rapido de atendimento.</p>
                 <a
                   href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-3 rounded-xl font-semibold hover:bg-red-50 transition-colors"
+                  className="inline-flex items-center gap-2 bg-white text-bbc px-6 py-3 rounded-xl font-semibold hover:bg-accent transition-colors"
                 >
                   <MessageCircle className="h-5 w-5" />
                   FALAR NO WHATSAPP

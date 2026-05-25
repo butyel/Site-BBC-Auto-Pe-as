@@ -27,7 +27,7 @@ const defaultCategories: MegaMenuCategory[] = [
     name: "Motor",
     slug: "motor",
     subcategories: [
-      { name: "Pistões e Anéis", slug: "pistoes-aneis" },
+      { name: "Pistoes e Aneis", slug: "pistoes-aneis" },
       { name: "Bielas", slug: "bielas" },
       { name: "Virabrequim", slug: "virabrequim" },
       { name: "Junta do Motor", slug: "junta-motor" },
@@ -36,13 +36,13 @@ const defaultCategories: MegaMenuCategory[] = [
     ],
   },
   {
-    name: "Suspensão",
+    name: "Suspensao",
     slug: "suspensao",
     subcategories: [
       { name: "Amortecedores", slug: "amortecedores" },
       { name: "Molas", slug: "molas" },
       { name: "Buchas", slug: "buchas" },
-      { name: "Bandas Elásticas", slug: "bandas-elasticas" },
+      { name: "Bandas Elasticas", slug: "bandas-elasticas" },
       { name: "Terminais", slug: "terminais" },
     ],
   },
@@ -57,22 +57,22 @@ const defaultCategories: MegaMenuCategory[] = [
     ],
   },
   {
-    name: "Elétrica",
+    name: "Eletrica",
     slug: "eletrica",
     subcategories: [
       { name: "Baterias", slug: "baterias" },
       { name: "Alternadores", slug: "alternadores" },
       { name: "Motores de Partida", slug: "motores-partida" },
       { name: "Sensores", slug: "sensores" },
-      { name: "Faróis e Lanternas", slug: "faris-lanternas" },
+      { name: "Faroes e Lanternas", slug: "faris-lanternas" },
     ],
   },
   {
-    name: "Transmissão",
+    name: "Transmissao",
     slug: "transmissao",
     subcategories: [
       { name: "Embreagens", slug: "embreagens" },
-      { name: "Câmbio", slug: "cambio" },
+      { name: "Cambio", slug: "cambio" },
       { name: "Diferenciais", slug: "diferenciais" },
       { name: "Semieixos", slug: "semieixos" },
     ],
@@ -92,17 +92,17 @@ const defaultCategories: MegaMenuCategory[] = [
     subcategories: [
       { name: "Radiadores", slug: "radiadores" },
       { name: "Ventoinhas", slug: "ventoinhas" },
-      { name: "Válvula Termostática", slug: "valvula-termostatica" },
+      { name: "Valvula Termostatica", slug: "valvula-termostatica" },
       { name: "Mangueiras", slug: "mangueiras" },
     ],
   },
   {
-    name: "Acessórios",
+    name: "Acessorios",
     slug: "acessorios",
     subcategories: [
-      { name: "Óleos e Lubrificantes", slug: "oleos-lubrificantes" },
+      { name: "Oleos e Lubrificantes", slug: "oleos-lubrificantes" },
       { name: "Filtros", slug: "filtros" },
-      { name: "Velas de Ignição", slug: "velas-ignicao" },
+      { name: "Velas de ignicao", slug: "velas-ignicao" },
       { name: "Palhetas", slug: "palhetas" },
     ],
   },
@@ -141,23 +141,20 @@ export default function MegaMenu({
           <div className="col-span-3 border-r border-gray-100">
             <nav className="space-y-1">
               {categories.map((cat) => (
-                <button
+                <Link
                   key={cat.slug}
+                  href={`/loja?categoria=${cat.slug}`}
+                  onClick={onClose}
                   onMouseEnter={() => setActiveCategory(cat.slug)}
-                  onClick={() => {
-                    onClose();
-                  }}
                   className={cn(
-                    "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
+                    "block w-full px-3 py-2 rounded-lg text-sm transition-colors",
                     activeCategory === cat.slug
                       ? "bg-accent text-bbc font-medium"
                       : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
                   )}
                 >
-                  <Link href={`/loja?categoria=${cat.slug}`} className="block">
-                    {cat.name}
-                  </Link>
-                </button>
+                  {cat.name}
+                </Link>
               ))}
             </nav>
           </div>

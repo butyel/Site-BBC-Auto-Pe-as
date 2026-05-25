@@ -250,11 +250,10 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="hidden lg:block bg-white border-b border-gray-100">
+      <nav className="hidden lg:block bg-white border-b border-gray-100 relative">
         <div className="max-w-7xl mx-auto px-4 h-11 flex items-center">
           <div
             ref={categoriesRef}
-            className="relative"
             onMouseEnter={handleCategoriesEnter}
             onMouseLeave={handleCategoriesLeave}
           >

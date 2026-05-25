@@ -9,11 +9,11 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 
 const contactInfo = [
-  { icon: Phone, label: "Telefone", value: "(11) 9999-9999", href: "tel:+5511999999999" },
-  { icon: MessageCircle, label: "WhatsApp", value: "(11) 99999-9999", href: "https://wa.me/5511999999999" },
+  { icon: Phone, label: "Telefone", value: "(18) 3281-5297", href: "tel:+551832815297" },
+  { icon: MessageCircle, label: "WhatsApp", value: "(18) 99753-8799", href: "https://wa.me/5518997538799" },
   { icon: Mail, label: "E-mail", value: "contato@bbcautopecas.com.br", href: "mailto:contato@bbcautopecas.com.br" },
-  { icon: MapPin, label: "Endereco", value: "Rua das Oficinas, 123 - Sao Paulo, SP", href: "#" },
-  { icon: Clock, label: "Horario de Atendimento", value: "Seg a Sex: 8h as 18h | Sab: 8h as 13h", href: "#" },
+  { icon: MapPin, label: "Endereco", value: "Av. Presidente Vargas, 4405 - Centro - Presidente Epitacio - SP", href: "#" },
+  { icon: Clock, label: "Horario de Atendimento", value: "Seg a Sex: 08h as 18h | Sab: 08h as 12h", href: "#" },
 ];
 
 const faqItems = [
@@ -180,7 +180,7 @@ export default function ContatoPage() {
                 <h3 className="text-xl font-bold mb-2">Atendimento via WhatsApp</h3>
                 <p className="text-blue-100 text-sm mb-4">Nosso canal mais rapido de atendimento.</p>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5518997538799"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white text-bbc px-6 py-3 rounded-xl font-semibold hover:bg-accent transition-colors"

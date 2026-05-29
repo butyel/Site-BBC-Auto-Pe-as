@@ -2,7 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Package,
@@ -103,12 +103,11 @@ function AdminHeader({
   onToggleSidebar: () => void;
 }) {
   const { user, logout } = useAdminAuth();
-  const router = useRouter();
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
   function handleLogout() {
     logout();
-    router.push("/admin/login");
+    window.location.href = "/admin/login";
   }
 
   return (

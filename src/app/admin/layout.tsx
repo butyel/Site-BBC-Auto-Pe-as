@@ -104,11 +104,17 @@ function AdminHeader({
 }) {
   const { user } = useAdminAuth();
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [logouting, setLogouting] = useState(false);
 
-  function handleLogout() {
-    localStorage.removeItem("admin_token");
-    localStorage.removeItem("admin_user");
-    window.location.href = "/admin/login";
+  function handleLogout(e: React.FormEvent) {
+    e.preventDefault();
+    setLogouting(true);
+    try {
+      localStorage.removeItem("admin_token");
+      localStorage.removeItem("admin_user");
+    } catch {}
+    const form = e.currentTarget as HTMLFormElement;
+    form.submit();
   }
 
   return (
@@ -167,13 +173,16 @@ function AdminHeader({
                   Configurações
                 </button>
                 <hr className="my-1 border-gray-200" />
-                <button
-                  onClick={handleLogout}
-                  className="flex items-center gap-2 w-full px-4 py-2 text-sm text-bbc hover:bg-accent"
-                >
-                  <LogOut className="w-4 h-4" />
-                  Sair
-                </button>
+                <form action="/api/auth/logout" method="POST" onSubmit={handleLogout}>
+                  <button
+                    type="submit"
+                    disabled={logouting}
+                    className="flex items-center gap-2 w-full px-4 py-2 text-sm text-bbc hover:bg-accent disabled:opacity-50"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    {logouting ? "SAINDO..." : "Sair"}
+                  </button>
+                </form>
               </div>
             </>
           )}

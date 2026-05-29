@@ -98,6 +98,13 @@ const initialPosts: BlogPost[] = [
     slug: "guia-completo-de-manutencao-preventiva-automotiva",
     excerpt: "Manter a manutenção em dia é essencial para evitar problemas e gastos inesperados. Confira o checklist completo.",
     content: "Conteúdo completo sobre manutenção preventiva...",
+    image: "",
+    author: "Equipe BBC",
+    category: "Manutenção",
+    readTime: "8 min",
+    published: true,
+    featured: true,
+    createdAt: "2026-04-20",
   },
 ];
 

@@ -104,4 +104,18 @@ export type CategoryInput = z.infer<typeof categorySchema>;
 export type AddressInput = z.infer<typeof addressSchema>;
 export type CheckoutInput = z.infer<typeof checkoutSchema>;
 export type CouponInput = z.infer<typeof couponSchema>;
+export const blogPostSchema = z.object({
+  title: z.string().min(3, "Título deve ter no mínimo 3 caracteres"),
+  slug: z.string().optional(),
+  excerpt: z.string().min(10, "Resumo deve ter no mínimo 10 caracteres"),
+  content: z.string().min(10, "Conteúdo deve ter no mínimo 10 caracteres"),
+  image: z.string().optional(),
+  author: z.string().optional(),
+  category: z.string().min(1, "Categoria é obrigatória"),
+  readTime: z.string().optional(),
+  published: z.boolean().optional(),
+  featured: z.boolean().optional(),
+});
+
 export type ReviewInput = z.infer<typeof reviewSchema>;
+export type BlogPostInput = z.infer<typeof blogPostSchema>;

@@ -162,6 +162,22 @@ export interface FilterOptions {
   limit?: number;
 }
 
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  image: string | null;
+  author: string;
+  category: string;
+  readTime: string;
+  published: boolean;
+  featured: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface PaginationResult {
   items: Product[];
   total: number;

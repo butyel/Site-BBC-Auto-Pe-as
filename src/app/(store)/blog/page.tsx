@@ -1,84 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowRight, Search, Clock, Tag } from "lucide-react";
 import Link from "next/link";
 
-const posts = [
-  {
-    id: 1,
-    title: "Como escolher a peça de reposicao ideal para seu veiculo",
-    excerpt: "A escolha da peça de reposicao correta e fundamental para garantir a seguranca e o desempenho do seu veiculo. Confira nossas dicas.",
-    author: "Equipe BBC",
-    date: "15 Mai 2026",
-    category: "Dicas",
-    readTime: "5 min",
-    image: null,
-  },
-  {
-    id: 2,
-    title: "Sinais de que sua suspensao precisa de atencao",
-    excerpt: "Barulhos estranhos, direcao desalinhada e pneus desgastados podem indicar problemas na suspensao. Saiba identificar.",
-    author: "Equipe BBC",
-    date: "10 Mai 2026",
-    category: "Mecanica",
-    readTime: "4 min",
-    image: null,
-  },
-  {
-    id: 3,
-    title: "Entenda a diferenca entre oleos lubrificantes",
-    excerpt: "Sintetico, semissintetico ou mineral? Entenda as diferencas e escolha o oleo certo para o motor do seu carro.",
-    author: "Equipe BBC",
-    date: "05 Mai 2026",
-    category: "Dicas",
-    readTime: "6 min",
-    image: null,
-  },
-  {
-    id: 4,
-    title: "Como aumentar a vida util dos freios do seu carro",
-    excerpt: "Pequenos habitos podem fazer grande diferenca na durabilidade do sistema de freios. Veja como cuidar melhor.",
-    author: "Equipe BBC",
-    date: "28 Abr 2026",
-    category: "Manutencao",
-    readTime: "4 min",
-    image: null,
-  },
-  {
-    id: 5,
-    title: "Guia completo de manutencao preventiva automotiva",
-    excerpt: "Manter a manutencao em dia e essencial para evitar problemas e gastos inesperados. Confira o checklist completo.",
-    author: "Equipe BBC",
-    date: "20 Abr 2026",
-    category: "Manutencao",
-    readTime: "8 min",
-    image: null,
-  },
-  {
-    id: 6,
-    title: "Pneu careca: riscos e quando trocar",
-    excerpt: "Rodar com pneus carecas e extremamente perigoso. Saiba identificar o ponto ideal de troca e garanta sua seguranca.",
-    author: "Equipe BBC",
-    date: "15 Abr 2026",
-    category: "Seguranca",
-    readTime: "3 min",
-    image: null,
-  },
-];
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  author: string;
+  category: string;
+  readTime: string;
+  image: string | null;
+  createdAt: string;
+}
 
-const categories = ["Todas", "Dicas", "Mecanica", "Manutencao", "Seguranca"];
+const categories = ["Todas", "Dicas", "Mecânica", "Manutenção", "Segurança", "Novidades"];
 
 export default function BlogPage() {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("Todas");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredPosts = posts.filter((post) => {
-    const matchesCategory = activeCategory === "Todas" || post.category === activeCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  useEffect(() => {
+    async function loadPosts() {
+      try {
+        const params = new URLSearchParams({ published: "true", limit: "50" });
+        if (activeCategory !== "Todas") params.set("category", activeCategory);
+        if (searchQuery) params.set("search", searchQuery);
+        const res = await fetch(`/api/blog?${params}`);
+        const data = await res.json();
+        setPosts(data.posts || []);
+      } catch {
+        setPosts([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadPosts();
+  }, [activeCategory, searchQuery]);
 
   return (
     <div className="min-h-screen">
@@ -86,10 +49,10 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Blog <span className="text-bbc-light">BBC AUTO PECAS</span>
+              Blog <span className="text-bbc-light">BBC AUTO PEÇAS</span>
             </h1>
             <p className="text-lg text-gray-300">
-              Dicas, novidades e informacoes sobre o mundo automotivo para ajudar voce a cuidar melhor do seu veiculo.
+              Dicas, novidades e informações sobre o mundo automotivo para ajudar você a cuidar melhor do seu veículo.
             </p>
           </motion.div>
         </div>
@@ -102,7 +65,7 @@ export default function BlogPage() {
               {categories.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  onClick={() => { setActiveCategory(cat); setSearchQuery(""); }}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeCategory === cat
                       ? "bg-bbc text-white"
@@ -119,7 +82,7 @@ export default function BlogPage() {
                 type="text"
                 placeholder="Buscar artigos..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => { setSearchQuery(e.target.value); setActiveCategory("Todas"); }}
                 className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-bbc focus:border-transparent"
               />
             </div>
@@ -129,13 +92,24 @@ export default function BlogPage() {
 
       <section className="py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4">
-          {filteredPosts.length === 0 ? (
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="aspect-[16/9] bg-gray-200 rounded-xl mb-4" />
+                  <div className="h-4 bg-gray-200 rounded w-1/3 mb-3" />
+                  <div className="h-6 bg-gray-200 rounded w-full mb-2" />
+                  <div className="h-4 bg-gray-200 rounded w-2/3" />
+                </div>
+              ))}
+            </div>
+          ) : posts.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-gray-400 text-lg">Nenhum artigo encontrado.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
+              {posts.map((post, index) => (
                 <motion.article
                   key={post.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -144,14 +118,24 @@ export default function BlogPage() {
                   transition={{ delay: index * 0.05 }}
                   className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg hover:border-accent transition-all group"
                 >
-                  <div className="aspect-[16/9] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                    <span className="text-4xl">🔧</span>
-                  </div>
+                  <Link href={`/blog/${post.slug}`}>
+                    <div className="aspect-[16/9] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center overflow-hidden">
+                      {post.image ? (
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <span className="text-4xl">🔧</span>
+                      )}
+                    </div>
+                  </Link>
                   <div className="p-6">
                     <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
                       <span className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
-                        {post.date}
+                        {post.createdAt}
                       </span>
                       <span className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
@@ -162,9 +146,11 @@ export default function BlogPage() {
                         {post.category}
                       </span>
                     </div>
-                    <h2 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-bbc transition-colors line-clamp-2">
-                      {post.title}
-                    </h2>
+                    <Link href={`/blog/${post.slug}`}>
+                      <h2 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-bbc transition-colors line-clamp-2">
+                        {post.title}
+                      </h2>
+                    </Link>
                     <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
@@ -174,7 +160,7 @@ export default function BlogPage() {
                         {post.author}
                       </span>
                       <Link
-                        href={`/blog/${post.id}`}
+                        href={`/blog/${post.slug}`}
                         className="inline-flex items-center gap-1 text-sm text-bbc hover:text-bbc-dark font-medium"
                       >
                         Ler mais

@@ -102,11 +102,12 @@ function AdminHeader({
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
 }) {
-  const { user, logout } = useAdminAuth();
+  const { user } = useAdminAuth();
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
   function handleLogout() {
-    logout();
+    localStorage.removeItem("admin_token");
+    localStorage.removeItem("admin_user");
     window.location.href = "/admin/login";
   }
 

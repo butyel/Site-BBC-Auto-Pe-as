@@ -15,7 +15,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !password) {
       setError("Preencha todos os campos");
@@ -23,10 +23,29 @@ export default function LoginPage() {
     }
     setError("");
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "Erro ao fazer login");
+        return;
+      }
+      localStorage.setItem("site_token", data.token);
+      localStorage.setItem("site_user", JSON.stringify(data.user));
+      if (data.user.role === "ADMIN") {
+        window.location.href = "/admin";
+      } else {
+        window.location.href = "/minhaconta";
+      }
+    } catch {
+      setError("Erro ao conectar com o servidor");
+    } finally {
       setLoading(false);
-      window.location.href = "/minhaconta";
-    }, 1000);
+    }
   };
 
   return (

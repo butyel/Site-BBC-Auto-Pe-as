@@ -53,7 +53,19 @@ const statusConfig = {
 };
 
 export default function MinhaContaPage() {
-  const [userName] = useState("Raphael");
+  const [userName] = useState(() => {
+    try {
+      const stored = localStorage.getItem("site_user");
+      if (stored) return JSON.parse(stored).name || "Cliente";
+    } catch {}
+    return "Raphael";
+  });
+
+  function handleLogout() {
+    localStorage.removeItem("site_token");
+    localStorage.removeItem("site_user");
+    window.location.href = "/login";
+  }
 
   const quickLinks = [
     {
@@ -104,7 +116,8 @@ export default function MinhaContaPage() {
             </div>
             <Button
               variant="outline"
-              className="hidden sm:flex items-center gap-2 text-sm border-gray-200"
+              onClick={handleLogout}
+              className="flex items-center gap-2 text-sm border-gray-200"
             >
               <LogOut className="h-4 w-4" />
               Sair
